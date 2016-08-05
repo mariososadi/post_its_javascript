@@ -10,7 +10,7 @@ var Board = function( selector ) {
 
       var x = e.pageX + 'px';
       var y = e.pageY + 'px';
-      var div = $('<div id="master" class="post-it"><div class="header"><div class="close"><strong>X</strong></div></div><div class="content">...</div>').css({                 
+      var div = $('<div id="master" class="post-it"><div class="header"><div class="close"><strong>X</strong></div></div><div class="content" contenteditable="true" onclick="$(this).focus();" >...</div>').css({                 
             "left": x,
             "top": y
         });
@@ -36,18 +36,6 @@ var PostIt = function() {
       $(".post-it").dblclick( function(e) {
         return false
       });
-
-     var $h = $( ".header" )  
-       $h.on('click', function(event){
-        $(this).prop( "contenteditable", true );
-        event.stopPropagation();
-     });
-
-
-    
-  
-
-
   // Aquí va el código relacionado con un post-it
 };
 
